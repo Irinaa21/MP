@@ -1,3 +1,4 @@
+
 /*Haz un programa que calcule la traspuesta de una matriz 2D. La inversi´on se hace
 por medio de una funci´on.*/
 
@@ -19,7 +20,7 @@ void readMatrix(int array[limit][limit], int &used){
     }
 }
 
-void printRow(const int array[], int used){
+void printRow(const int *array, int used){
     for (int i = 0; i < used; i++){
         cout << array[i] << " ";
     }
@@ -33,6 +34,28 @@ void printMatrix(const int array[limit][limit], int used){
     }
 }
 
+void readMatrix(int **&array, int &row, int &col){
+    cin >> row >> col;
+
+    array = new int*[row];
+    for (int i = 0; i < row; i++){
+        array[i] = new int[col];
+    }
+
+    for (int i = 0; i < row; i++){
+        for (int j = 0; j < col; j++){
+            cin >> array[i][j];
+        }
+    }
+}
+
+void printMatrix(int **array, int row, int col){
+    cout << row << " " << col << endl;
+    for (int i = 0; i < row; i++){
+        printRow(array[i], col);
+    }
+}
+
 void transpose(int array[limit][limit], int used){
     for (int i = 0; i < used; i++){
         for (int j = i+1; j < used; j++){
@@ -43,13 +66,45 @@ void transpose(int array[limit][limit], int used){
     }
 }
 
+//! Los punteros aunque sean como los arrays hay que pasarlos explicitamente por referencia
+void transpose(int **&array, int &row, int &col){
+    int **m = new int*[col];
+    for (int i = 0; i < col; i++){
+        m[i] = new int[row];
+    }
+
+    for (int i = 0; i < row; i++){
+        for (int j = 0; j < col; j++){
+            m[j][i] = array[i][j];
+        }
+    }
+
+    for(int i = 0; i < row; ++i)
+        delete[] array[i];
+
+    delete[] array;
+
+    int aux = row;
+    row = col;
+    col = aux;
+
+    array = m;
+
+}
+
 
 int main(){
-    const int limit = 100;
-    int array[limit][limit];
-    int used;
+    
+    int **array;
+    int row, col;
 
-    readMatrix(array, used);
-    transpose(array, used);
-    printMatrix(array, used);
+    readMatrix(array, row, col);
+    transpose(array, row, col);
+    printMatrix(array, row, col);
+
+    for(int i = 0; i < row; ++i)
+        delete[] array[i];
+
+    delete[] array;
+
 }

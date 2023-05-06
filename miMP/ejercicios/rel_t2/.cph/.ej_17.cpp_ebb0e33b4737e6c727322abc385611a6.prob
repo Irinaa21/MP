@@ -1,0 +1,1 @@
+{"name":"Local: ej_17","url":"/home/irina/Documents/MP/miMP/ejercicios/rel_t2/ej_17.cpp","tests":[{"id":1683388882952,"input":"2 5\n1 2 3 4 5 \n1 2 3 4 5","output":"5 2 \n1 1\n2 2 \n3 3 \n4 4 \n5 5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/irina/Documents/MP/miMP/ejercicios/rel_t2/ej_17.cpp","group":"local","local":true}
