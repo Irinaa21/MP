@@ -79,4 +79,6 @@ int main(){
     fillArray(array, used, tope);
     //selectionSort(array, used);
     printArray(array, used);
+
+    delete[] array;
 }
