@@ -33,13 +33,13 @@ void bubbleSort(const int *v[], int used){
     }
 }
 
-void sortWithNoChange(const int *p[], const int v[], int used){
-    for (int i = 0; i < used; i++){
-        p[i] = &v[i];
+void apuntaAArray(const int *p[], const int v[], int used, int begin, int end){
+    for (int i = 0; i < used-begin; i++){
+        p[i] = &v[i+begin];
     }
-
-    bubbleSort(p, used);
 }
+
+
 
 void printArray(const int *v[], int used){
     cout << used << endl;
@@ -72,7 +72,14 @@ int main(){
 
     readArray(vec, used, 1000);
     printArray(vec, used);
-    sortWithNoChange(ptr, vec, used);
+    apuntaAArray(ptr, vec, used, 0, used);
+    const int *ptr2[500];
+    apuntaAArray(ptr2, vec, used, used/2, used);
+
+    bubbleSort(ptr, used);
+    bubbleSort(ptr2, used/2);
+
     printArray(ptr, used);
+    printArray(ptr2, used/2);
 
 }
