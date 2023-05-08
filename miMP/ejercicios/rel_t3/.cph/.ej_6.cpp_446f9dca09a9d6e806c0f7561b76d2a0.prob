@@ -1,0 +1,1 @@
+{"name":"Local: ej_6","url":"/home/irina/Documents/MP/miMP/ejercicios/rel_t3/ej_6.cpp","tests":[{"id":1683500188119,"input":"10\n1 2 3 4 5 6 7 8 9 10","output":"1 10"},{"id":1683500240249,"input":"3 5 6 4","output":"4 6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/irina/Documents/MP/miMP/ejercicios/rel_t3/ej_6.cpp","group":"local","local":true}
