@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+/miMP/ejercicios/rel_t3/ej_14/build/
+/miMP/ejercicios/rel_t3/ej_14/dist/
+/miMP/ejercicios/rel_t3/ej_16/build/
+/miMP/ejercicios/rel_t3/ej_16/dist/
